@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Keratin</title>
+        <!-- css -->
+        <link rel="stylesheet" href="static/css/faq.css">
+        <!-- boostrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+<body>
+    <header class="header" id="header">
+        <a href="index.html" class="text-decoration-none">
+          <img class="headerImg" src="/static/images/header_logo.svg" alt="head-logo" />
+        </a>
+        <nav class="headerNav">
+          <a href="preorder.html" class="preBtn">Pre Order</a>
+          <button class="menuBtn"><img style="width: 16px;" src="/static/images/burger.svg" alt="bar" /></button>
+        </nav>
+      </header>
+    
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const header = document.getElementById('header');
+          const button = document.querySelector('.menuBtn');
+          const menu = document.querySelector('.menu');
+          const menuIcon = button.querySelector('img');
+      
+          const defaultIcon = "/static/images/burger.svg";
+          const activeIcon = "/static/images/close.svg";
+      
+          let lastScrollTop = 0;
+      
+          button.addEventListener('click', function () {
+              menu.classList.toggle('show');
+              menuIcon.src = menu.classList.contains('show') ? activeIcon : defaultIcon;
+          });
+      
+          window.addEventListener('scroll', () => {
+              const scrollTop = window.scrollY;
+      
+              if (scrollTop > lastScrollTop && scrollTop > 200) {
+                  // Scrolling down, hide the header & close menu
+                  header.classList.add('hidden');
+                  menu.classList.remove('show'); // Close the menu
+                  menuIcon.src = defaultIcon; // Reset to burger icon
+              } else if (scrollTop < lastScrollTop && scrollTop > 150) {
+                  // Scrolling up, show the header
+                  header.classList.remove('hidden');
+              }
+              lastScrollTop = scrollTop;
+          });
+      });
+      </script>
+    
+      <menu class="menu">
+        <div class="menu-top">
+            <a class="text-secondary text-decoration-none" href="index.html">Home</a>
+            <a class="text-secondary text-decoration-none" href="about.html">About</a>
+            <a class="text-secondary text-decoration-none" href="demo.html">Demo</a>
+            <a class="text-secondary text-decoration-none" href="contact.html">Contact</a>
+            <a class="text-light text-decoration-none" href="faq.html">Faq</a>
+        </div>
+        
+        <hr />
+        <div class="menu-bottom">
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-linkedin-in"></i></a>
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-x-twitter"></i></a>
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-instagram"></i></a>
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-facebook-f"></i></a>
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-threads"></i></a>
+        </div>
+        <hr />
+        <div class="menu-bottom">
+          <img style="width: 4rem;" src="/static/images/amazon.svg" alt="amazon" />
+          <img style="width: 5rem;" src="/static/images/flipkart.svg" alt="flipkart" />
+        </div>
+      </menu>
+      <section class="faq">
+        <h3 class="mb-5">Frequently Asked Questions</h3>
+        <div class="accordion container" id="accordionExample">
+          <!-- one -->
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Is this a normal charger ?</button></h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>The KERATIN 25-W is a fast charger (PD,PPS,QC) that has the unique ability to hold the device it is charging. Theproductprovides two-in one feature</p>
+              </div>
+            </div>
+          </div>
+          <!-- two -->
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Is this charger easy to carry ?</button></h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>The KERATIN 25-W comes up with a doimension of 5.2* 5.2* 5.5 cm, a cube of 5 cm is eay to carry in handandhencecompact and efficient.</p>
+              </div>
+            </div>
+          </div>
+          <!-- three -->
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">How to use the holder facility ?</button></h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>There is a cap to opened and users can easily place their gadget in the area provided for holding part. Theengineeringdesignand the features are in such a way that the KERATIN 25-W will hold the devices even under disturbances.</p>
+              </div>
+            </div>
+          </div>
+          <!-- four -->
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Is cable available alongwith the charger ?</button></h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>Yes, The KERATIN 25-W comes along with a braided 500cm cable that has the power rating upto 30W.</p>
+              </div>
+            </div>
+          </div>
+          <!-- five -->
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">What is the warranty period ?</button></h2>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>The KERATIN 25-W provides INDUSTRY HIGHEST WARRANTY PERIOD OF 2 YEAR. It comes with replacement warranty.</p>
+              </div>
+            </div>
+          </div>
+          <!-- six -->
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Is all phones supported for charging and holding feature ?</button></h2>
+            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>Yes, The KERATIN 25-W has the ability to charge and hold all the android phones and the iphones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer section -->
+      <div id="footer"></div>
+
+      <script>
+          // Load the footer from the footer.html file
+          fetch('footer.html')
+              .then(response => response.text())
+              .then(data => document.getElementById('footer').innerHTML = data);
+      </script>
+</body>
+
+<!-- bootrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>

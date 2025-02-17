@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo | Keratin</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="static/css/demo.css">
+        <!-- glight box -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+        <!-- boostrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+<body>
+
+    <header class="header" id="header">
+        <a href="index.html" class="text-decoration-none">
+          <img class="headerImg" src="/static/images/header_logo.svg" alt="head-logo" />
+        </a>
+        <nav class="headerNav">
+          <a href="preorder.html" class="preBtn">Pre Order</a>
+          <button class="menuBtn"><img style="width: 16px;" src="/static/images/burger.svg" alt="bar" /></button>
+        </nav>
+      </header>
+    
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const header = document.getElementById('header');
+          const button = document.querySelector('.menuBtn');
+          const menu = document.querySelector('.menu');
+          const menuIcon = button.querySelector('img');
+      
+          const defaultIcon = "/static/images/burger.svg";
+          const activeIcon = "/static/images/close.svg";
+      
+          let lastScrollTop = 0;
+      
+          button.addEventListener('click', function () {
+              menu.classList.toggle('show');
+              menuIcon.src = menu.classList.contains('show') ? activeIcon : defaultIcon;
+          });
+      
+          window.addEventListener('scroll', () => {
+              const scrollTop = window.scrollY;
+      
+              if (scrollTop > lastScrollTop && scrollTop > 200) {
+                  // Scrolling down, hide the header & close menu
+                  header.classList.add('hidden');
+                  menu.classList.remove('show'); // Close the menu
+                  menuIcon.src = defaultIcon; // Reset to burger icon
+              } else if (scrollTop < lastScrollTop && scrollTop > 150) {
+                  // Scrolling up, show the header
+                  header.classList.remove('hidden');
+              }
+              lastScrollTop = scrollTop;
+          });
+      });
+      </script>
+    
+      <menu class="menu">
+        <menu class="menu">
+            <div class="menu-top">
+              <a class="text-secondary text-decoration-none" href="index.html">Home</a>
+              <a class="text-secondary text-decoration-none" href="about.html">About</a>
+              <a class="text-light text-decoration-none" href="demo.html">Demo</a>
+              <a class="text-secondary text-decoration-none" href="contact.html">Contact</a>
+              <a class="text-secondary text-decoration-none" href="faq.html">Faq</a>
+          </div>
+        
+        <hr />
+        <div class="menu-bottom">
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-linkedin-in"></i></a>
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-x-twitter"></i></a>
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-instagram"></i></a>
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-facebook-f"></i></a>
+          <a href="#" class="text-light"><i class="fa-brands text-secondary fa-threads"></i></a>
+        </div>
+        <hr />
+        <div class="menu-bottom">
+          <img style="width: 4rem;" src="/static/images/amazon.svg" alt="amazon" />
+          <img style="width: 5rem;" src="/static/images/flipkart.svg" alt="flipkart" />
+        </div>
+      </menu>
+    
+
+    <section class="demo-hero">
+        <div class="container h-100 d-flex align-items-center justify-content-center">
+          <div class="row w-100 h-100 d-flex flex-wrap align-items-center justify-content-center">
+            <!-- Text Section -->
+            <div class="hero-text col-12 col-md-7 d-flex flex-column text-start text-md-start order-2 order-md-1">
+              <h1 class="text-top">Still Charging,</h1>
+              <h1 class="text-top">Now Holding</h1>
+                <h1 class="text-bottom" id="text-bottom">FAST CHARGING</h1>
+            </div>
+    
+            <!-- Image Section -->
+            <div class="hero-img p-5 col-12 col-md-5 d-flex align-items-center justify-content-center order-1 order-md-2">
+              <img class="img-fluid mb-3 mb-md-0" src="/static/images/charger_3.webp" alt="ba" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const textBottom = document.getElementById('text-bottom');
+            const textArray = ['FAST CHARGING', '2 YEARS WARRANTY', 'INTELLIGENT CHIP INSIDE','7 LAYER OF PROTECTION','COMPACT & STYLISH','AUTO ADAPT'];
+            let index = 0;
+        
+            setInterval(() => {
+                textBottom.textContent = textArray[index];
+                index = (index + 1) % textArray.length; 
+            }, 700);
+        });
+        
+    </script>
+    
+    <section id="demo-video">
+      <div class="demo-content">
+        <div class="video d-flex align-items-center justify-content-center">
+          <div class="w-100 px-3">
+            <h3>Hold & Charge</h3>
+            <p>Hold and charge your phone securely, no matter where you are - all in one simple design.</p>
+          </div>
+        </div>
+        <div class="video">
+          <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+            <img class="img-fluid video-thumbnail" src="/static/images/thumbnail.jpeg" alt="image" />
+            <img class="img-fluid play-img" src="/static/images/play.svg" alt="Play Button" />
+          </a>
+        </div>
+        
+        <div class="video">
+          <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+            <img class="img-fluid video-thumbnail" src="/static/images/thumbnail.jpeg" alt="image" />
+            <img class="img-fluid play-img" src="/static/images/play.svg" alt="Play Button" />
+          </a>
+        </div>
+        
+        <div class="video">
+          <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+            <img class="img-fluid video-thumbnail" src="/static/images/thumbnail.jpeg" alt="image" />
+            <img class="img-fluid play-img" src="/static/images/play.svg" alt="Play Button" />
+          </a>
+        </div>
+        
+      </div>
+    </section>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function (event) {
+        const lightbox = GLightbox({
+          selector: '.glightbox',
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true,
+          onOpen: () => {
+            console.log('Lightbox opened')
+          },
+          beforeSlideLoad: (slide, data) => {
+            // Need to execute a script in the slide?
+            // You can do that here...
+          }
+        })
+      })
+    </script>
+    
+      <section class="carousel-container">
+        <div class="carousel-wrapper">
+            <div class="carousel-slide"><img src="/static/images/spec-img.png" alt="Slide 1"></div>
+            <div class="carousel-slide"><img src="/static/images/spec-img.png" alt="Slide 2"></div>
+            <div class="carousel-slide"><img src="/static/images/spec-img.png" alt="Slide 3"></div>
+            <div class="carousel-slide"><img src="/static/images/spec-img.png" alt="Slide 4"></div>
+            <div class="carousel-slide"><img src="/static/images/spec-img.png" alt="Slide 5"></div>
+            <div class="carousel-slide"><img src="/static/images/spec-img.png" alt="Slide 6"></div>
+        </div>
+    
+        <!-- Navigation buttons -->
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+    
+        <!-- Pagination dots -->
+        <div class="carousel-dots"></div>
+    </section>
+    
+    <script>
+      const wrapper = document.querySelector(".carousel-wrapper");
+      const slides = document.querySelectorAll(".carousel-slide");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+      const dotsContainer = document.querySelector(".carousel-dots");
+      let currentIndex = 0;
+      let slidesPerView = 3; // Default for desktop
+      let autoPlayInterval;
+    
+      // Detect screen size for responsive slides
+      function updateSlidesPerView() {
+          if (window.innerWidth <= 480) {
+              slidesPerView = 1; // Mobile
+          } else if (window.innerWidth <= 768) {
+              slidesPerView = 2; // Tablet
+          } else {
+              slidesPerView = 3; // Desktop
+          }
+          updateSlide(currentIndex);
+      }
+    
+      // Create dots dynamically
+      const totalDots = Math.ceil(slides.length / slidesPerView);
+      for (let i = 0; i < totalDots; i++) {
+          const dot = document.createElement("div");
+          dot.classList.add("dot");
+          if (i === 0) dot.classList.add("active");
+          dot.setAttribute("data-index", i);
+          dotsContainer.appendChild(dot);
+      }
+    
+      const dots = document.querySelectorAll(".dot");
+    
+      function updateSlide(index) {
+          currentIndex = index;
+          wrapper.style.transform = `translateX(-${currentIndex * (100 / slidesPerView)}%)`;
+          dots.forEach(dot => dot.classList.remove("active"));
+          dots[currentIndex].classList.add("active");
+      }
+    
+      function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalDots;
+          updateSlide(currentIndex);
+      }
+    
+      function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalDots) % totalDots;
+          updateSlide(currentIndex);
+      }
+    
+      function startAutoPlay() {
+          autoPlayInterval = setInterval(nextSlide, 3000);
+      }
+    
+      function stopAutoPlay() {
+          clearInterval(autoPlayInterval);
+      }
+    
+      // Button controls
+      nextBtn.addEventListener("click", () => {
+          nextSlide();
+          stopAutoPlay();
+          startAutoPlay();
+      });
+    
+      prevBtn.addEventListener("click", () => {
+          prevSlide();
+          stopAutoPlay();
+          startAutoPlay();
+      });
+    
+      // Dot navigation
+      dots.forEach(dot => {
+          dot.addEventListener("click", (e) => {
+              const index = parseInt(e.target.getAttribute("data-index"));
+              updateSlide(index);
+              stopAutoPlay();
+              startAutoPlay();
+          });
+      });
+    
+      // Update slide view on window resize
+      window.addEventListener("resize", updateSlidesPerView);
+      updateSlidesPerView(); // Initial setup
+    
+      // Auto-start carousel
+      startAutoPlay();
+    </script>
+
+          <!-- Footer section -->
+          <div id="footer"></div>
+
+          <script>
+              // Load the footer from the footer.html file
+              fetch('footer.html')
+                  .then(response => response.text())
+                  .then(data => document.getElementById('footer').innerHTML = data);
+          </script>
+</body>
+
+<!-- bootrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>

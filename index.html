@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- css -->
+  <link rel="stylesheet" href="static/css/index.css">
+  <!-- glight box -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <!-- boostrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- model viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+</head>
+
+<body>
+  <header class="header" id="header">
+    <a href="index.html" class="text-decoration-none">
+      <img class="headerImg" src="/static/images/header_logo.svg" alt="head-logo" />
+    </a>
+    <nav class="headerNav">
+      <a href="preorder.html" class="preBtn">Pre Order</a>
+      <button class="menuBtn"><img style="width: 16px;" src="/static/images/burger.svg" alt="bar" /></button>
+    </nav>
+  </header>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const header = document.getElementById('header');
+      const button = document.querySelector('.menuBtn');
+      const menu = document.querySelector('.menu');
+      const menuIcon = button.querySelector('img');
+
+      const defaultIcon = "/static/images/burger.svg";
+      const activeIcon = "/static/images/close.svg";
+
+      let lastScrollTop = 0;
+
+      button.addEventListener('click', function () {
+        menu.classList.toggle('show');
+        menuIcon.src = menu.classList.contains('show') ? activeIcon : defaultIcon;
+      });
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+
+        if (scrollTop > lastScrollTop && scrollTop > 200) {
+          // Scrolling down, hide the header & close menu
+          header.classList.add('hidden');
+          menu.classList.remove('show'); // Close the menu
+          menuIcon.src = defaultIcon; // Reset to burger icon
+        } else if (scrollTop < lastScrollTop && scrollTop > 150) {
+          // Scrolling up, show the header
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    });
+  </script>
+
+  <menu class="menu">
+    <div class="menu-top">
+      <a class="text-light text-decoration-none" href="index.html">Home</a>
+      <a class="text-secondary text-decoration-none" href="about.html">About</a>
+      <a class="text-secondary text-decoration-none" href="demo.html">Demo</a>
+      <a class="text-secondary text-decoration-none" href="contact.html">Contact</a>
+      <a class="text-secondary text-decoration-none" href="faq.html">Faq</a>
+    </div>
+
+
+    <hr />
+    <div class="menu-bottom">
+      <a href="#" class="text-light"><i class="fa-brands text-secondary fa-linkedin-in"></i></a>
+      <a href="#" class="text-light"><i class="fa-brands text-secondary fa-x-twitter"></i></a>
+      <a href="#" class="text-light"><i class="fa-brands text-secondary fa-instagram"></i></a>
+      <a href="#" class="text-light"><i class="fa-brands text-secondary fa-facebook-f"></i></a>
+      <a href="#" class="text-light"><i class="fa-brands text-secondary fa-threads"></i></a>
+    </div>
+    <hr />
+    <div class="menu-bottom">
+      <img style="width: 4rem;" src="/static/images/amazon.svg" alt="amazon" />
+      <img style="width: 5rem;" src="/static/images/flipkart.svg" alt="flipkart" />
+    </div>
+  </menu>
+
+
+
+  <section class="hero">
+    <div class="text-container vh-100">
+      <h1>Hold & Charge</h1>
+      <small id="scroll-text" class="text-secondary">scroll down ↓</small>
+    </div>
+    <div class="text-container">
+      <h2>25W FAST CHARGER <br> (PD3.0,PPS)</h2><img src="/static/images/charger_1.webp" alt="" />
+    </div>
+    <div class="text-container">
+      <h2>World’s 1st <br> HOLD & CHARGE</h2><img src="/static/images/charger_2.webp" alt="" />
+    </div>
+    <div class="text-container">
+      <h2>PRE ORDER @ <br> M.R.P : <span class="cut-text">1699</span> 1,099</h2><img src="/static/images/charger_3.webp"
+        alt="" />
+    </div>
+  </section>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const texts = document.querySelectorAll(".text-container");
+      const sectionHeight = window.innerHeight;
+
+      function updateSections() {
+        const scrollPosition = window.scrollY;
+        const currentSection = Math.floor(scrollPosition / sectionHeight);
+
+        texts.forEach((text, index) => {
+          text.classList.toggle("visible", index === currentSection);
+        });
+      }
+
+      window.addEventListener("scroll", () => {
+        requestAnimationFrame(updateSections);
+      });
+
+      updateSections(); // Run once on load
+    });
+  </script>
+
+
+
+  <section class="model-view-section" id="3d-section">
+    <h1 style="color: white">Explore in 360°</h1>
+
+    <!-- Model Viewer -->
+    <model-viewer class="model-viewer" id="model-viewer" src="https://keratin-glb.vercel.app/keratin_Model_opened.glb"
+      interaction-prompt="none" disable-zoom auto-rotate camera-controls auto-rotate-delay="1000" alt="3D Model">
+    </model-viewer>
+
+    <!-- Buttons -->
+    <div style="padding-top: 3rem;">
+      <button onclick="changeModel('keratin_Model_opened.glb', this)">Opened</button>
+      <button onclick="changeModel('keratin_Model.glb', this)">Closed</button>
+      <button onclick="changeModel('keratin_Model_Plugged.glb', this)">Plugged</button>
+    </div>
+  </section>
+
+  <script>
+    // Function to change the model and update button styles
+    function changeModel(modelFile, buttonElement) {
+      // Define the base Vercel URL for GLB files
+      const baseURL = "https://keratin-glb.vercel.app/";
+
+      // Change the model in the viewer
+      const modelViewer = document.getElementById('model-viewer');
+      modelViewer.src = baseURL + modelFile;
+
+      // Update button styles
+      const buttons = document.querySelectorAll('.model-view-section button');
+      buttons.forEach((button) => button.classList.remove('selected'));
+      buttonElement.classList.add('selected');
+    }
+
+    // Set the first button as selected on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const firstButton = document.querySelector('.model-view-section button');
+      if (firstButton) {
+        firstButton.classList.add('selected');
+      }
+    });
+  </script>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modelViewer = document.querySelector(".model-viewer");
+      const cursor = document.createElement("div");
+      cursor.classList.add("custom-cursor");
+      cursor.innerText = "drag";
+      document.body.appendChild(cursor);
+
+      // Show cursor inside model view
+      modelViewer.addEventListener("mouseenter", () => {
+        cursor.style.display = "flex";
+      });
+
+      // Hide cursor when leaving model view
+      modelViewer.addEventListener("mouseleave", () => {
+        cursor.style.display = "none";
+      });
+
+      // Move cursor with mouse
+      modelViewer.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+      });
+    });
+
+  </script>
+
+  <section id="demo-video">
+    <div class="demo-content">
+      <div class="video d-flex align-items-center justify-content-center">
+        <div class="w-100 px-3">
+          <h3>Hold & Charge</h3>
+          <p>Hold and charge your phone securely, no matter where you are - all in one simple design.</p>
+        </div>
+      </div>
+      <div class="video">
+        <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+          <img class="img-fluid video-thumbnail" src="/static/images/thumbnail.jpeg" alt="image" />
+          <img class="img-fluid play-img" src="/static/images/play.svg" alt="Play Button" />
+        </a>
+      </div>
+
+      <div class="video">
+        <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+          <img class="img-fluid video-thumbnail" src="/static/images/thumbnail.jpeg" alt="image" />
+          <img class="img-fluid play-img" src="/static/images/play.svg" alt="Play Button" />
+        </a>
+      </div>
+
+      <div class="video">
+        <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+          <img class="img-fluid video-thumbnail" src="/static/images/thumbnail.jpeg" alt="image" />
+          <img class="img-fluid play-img" src="/static/images/play.svg" alt="Play Button" />
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function (event) {
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true,
+        onOpen: () => {
+          console.log('Lightbox opened')
+        },
+        beforeSlideLoad: (slide, data) => {
+          // Need to execute a script in the slide?
+          // You can do that here...
+        }
+      })
+    })
+  </script>
+
+  <section id="spec">
+    <div class="spec-inner">
+      <!-- Left Column -->
+      <div class="spec-col">
+        <img class="w-100 img-fluid" src="/static/images/spec-img.png" alt="Product Image" />
+      </div>
+      <!-- Right Column -->
+      <div class="spec-col">
+        <div class="px-md-4">
+          <h4 class="spec-heading text-start text-md-start">PRODUCT SPECIFICATION</h4>
+          <p class="text-start text-md-start">Hold & Charge Keratin Charger : Fast charging with a built-in phone holder
+            for secure powering up.</p>
+          <div class="row">
+            <div class="col-6 spec-detail-text text-start">25 W</div>
+            <div class="col-6 spec-detail-text text-start">Type-C PD Fast Charger & Holder</div>
+            <hr class="mt-1" />
+            <div class="col-6 spec-detail-text text-start">
+              PD 3.0, PPS 3 3W <br /> QC 2.0, 3.0, 4+
+            </div>
+            <div class="col-6 spec-detail-text text-start">2 year warranty</div>
+            <hr class="mt-1" />
+            <div class="col-6 spec-detail-text text-start">0.5 meter Braided cable included (C-C )
+            </div>
+            <div class="col-6 spec-detail-text text-start">25W</div>
+            <hr class="mt-1" />
+            <div class="col-6 spec-detail-text text-start">5.2 * 5.2 * 5.5 cm</div>
+            <div class="col-6 spec-detail-text text-start">85 grams</div>
+          </div>
+          <small class="p-2 rounded" style="background-color:rgba(255, 106, 0, 0.5);">PRE ORDER @ M.R.P : <span
+              class="cut-text">1699</span> 1,099</small>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="feature">
+    <div class="feature-inner">
+      <!-- Left Column -->
+      <div class="feature-col d-flex align-items-center justify-content-center">
+        <div class="px-md-4">
+          <h4 class="feature-heading text-start text-md-start">FEATURES</h4>
+          <p class="text-start text-md-start">Charger with phone holder, compatible with Android/IPhone/Tablet/ Smart
+            watches and more.</p>
+          <hr />
+          <p class="text-start m-0">Total voltage protection</p>
+          <p class="text-start m-0"></p>
+          <p class="text-start m-0">Total Voltage Protecttion</p>
+          <p class="text-start m-0">Total Voltage Protecttion</p>
+          <p class="text-start m-0">Total Voltage Protecttion</p>
+
+          <hr />
+          <p class="text-start">AUTO ADAPT - Delivering the power required by the device plugged in ICVM (Inelligent
+            voltage & Current Management)</p>
+          <p class="fw-bold text-start">DESIGNED, ENGINEERED & MADE IN INDIA</p>
+          <p class="text-start" style="font-size: 10px;">NOTE : THE DEVICE IS COMPAITAIBLE TO CHARGE ALL USB-C DEVICES
+            BUT CAN’T HOLD HEAVY DEVICES LIKE POWERBANKS, LARGE SPEAKERS,TABLETS & iPADS, and more
+          </p>
+        </div>
+      </div>
+      <!-- Right Column -->
+      <div class="feature-col d-flex align-items-center justify-content-center">
+        <img class="w-100" src="/static/images/spec-img.png" alt="Product Image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <div id="footer"></div>
+
+  <script>
+    // Load the footer from the footer.html file
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+<!-- bootrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- glightbox -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+</html>

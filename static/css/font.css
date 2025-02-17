@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'geist' ;
+    src: url('../fonts/Geist-ExtraBold.ttf');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'geist' ;
+    src: url('../fonts/Geist-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'helvetica' ;
+    src: url('../fonts/HelveticaNowDisplay-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'helvetica' ;
+    src: url('../fonts/HelveticaNowDisplay-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'helvetica' ;
+    src: url('../fonts/HelveticaNowDisplay-Bold.ttf');
+    font-weight: bold;
+}
