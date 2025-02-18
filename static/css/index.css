@@ -254,12 +254,12 @@
   }
   
   .text-container h1 {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin-bottom: 10px;
   }
 
   .text-container h2 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-bottom: 10px;
 }
 
@@ -352,8 +352,11 @@
     pointer-events: none; 
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.337); 
-    backdrop-filter: blur(1px); 
+    backdrop-filter: blur(1px);
+    z-index: 9999; /* Make sure the custom cursor stays on top of other content */
+    display: none; /* Hidden initially */
   }
+  
   
 /* Demo Video Section */
 
