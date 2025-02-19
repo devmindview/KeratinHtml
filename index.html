@@ -14,15 +14,15 @@
   <!-- Theme Color (For Mobile Browser UI) -->
   <meta name="theme-color" content="#00000000">
 
-    <!-- Open Graph for WhatsApp -->
-    <meta property="og:title" content="KERATIN">
-    <meta property="og:description" content="World's 1st Hold & Charge">
-    <meta property="og:image" content="https://keratinregrow.com/images/apple-touch-icon.png">
-    <meta property="og:image:width" content="300">
-    <meta property="og:image:height" content="300">
-    <meta property="og:url" content="https://keratinregrow.com">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- Open Graph for WhatsApp -->
+  <meta property="og:title" content="KERATIN">
+  <meta property="og:description" content="World's 1st Hold & Charge">
+  <meta property="og:image" content="https://keratinregrow.com/images/apple-touch-icon.png">
+  <meta property="og:image:width" content="300">
+  <meta property="og:image:height" content="300">
+  <meta property="og:url" content="https://keratinregrow.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- css -->
   <link rel="stylesheet" href="css/index.css">
@@ -115,7 +115,7 @@
   <section class="hero">
     <div class="text-container vh-100">
       <h1>Hold & Charge</h1>
-      <small id="scroll-text" class="text-secondary">scroll down ↓</small>
+      <small id="scroll-text" class="text-light">Scroll <i style="background-color: #3b3b3c81;" class="rounded p-1 fa-solid fa-arrow-down fa-bounce"></i></small>
     </div>
     <div class="text-container">
       <h2>25W FAST CHARGER <br> (PD3.0,PPS)</h2><img src="images/charger_1.webp" alt="img" />
@@ -132,13 +132,16 @@
 
 
   <script>
+
     document.addEventListener("DOMContentLoaded", function () {
       const texts = document.querySelectorAll(".text-container");
-      const sectionHeight = window.innerHeight;
+      // let sectionHeight = window.innerHeight; // Get viewport height
+      let sectionHeight = window.innerHeight * 0.6; // Reducing the scroll distance
+
 
       function updateSections() {
         const scrollPosition = window.scrollY;
-        const currentSection = Math.floor(scrollPosition / sectionHeight);
+        const currentSection = Math.round(scrollPosition / sectionHeight); // Use `Math.round` for smoother transitions
 
         texts.forEach((text, index) => {
           text.classList.toggle("visible", index === currentSection);
@@ -149,8 +152,16 @@
         requestAnimationFrame(updateSections);
       });
 
+      window.addEventListener("resize", () => {
+        // sectionHeight = window.innerHeight; // Update height on window resize
+        sectionHeight = window.innerHeight * 0.6; // Update on window resize
+        updateSections();
+      });
+
       updateSections(); // Run once on load
     });
+
+
   </script>
 
 
@@ -331,7 +342,7 @@
             voltage & Current Management)</p>
           <p class="fw-bold text-start">DESIGNED, ENGINEERED & MADE IN INDIA</p>
           <p class="text-start" style="font-size: 10px;">NOTE : THE DEVICE IS COMPAITAIBLE TO CHARGE ALL USB-C DEVICES
-            BUT CAN’T HOLD HEAVY DEVICES LIKE POWERBANKS, LARGE SPEAKERS,TABLETS & iPADS, and more
+            BUT CAN’T HOLD HEAVY DEVICES LIKE POWERBANKS, LARGE SPEAKERS, TABLETS & iPADS, and more
           </p>
         </div>
       </div>

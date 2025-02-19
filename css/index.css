@@ -18,10 +18,29 @@
     padding: 0;
     scroll-snap-type: y mandatory;
   }
-  
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  /* Scroll bar */
+/* For Webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 5px; 
+  height: 6px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E75025 !important; 
+  border-radius: 10px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f6f6f2 !important; 
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0f; 
+}
+
+
+/* ------------------ Header ----------------- */
+
   .header {
     background-color: var(--header-bg);
     color: white;
@@ -186,7 +205,8 @@
   
   .hero {
     position: relative;
-    height: 400vh; /* Enough height to allow scrolling */
+    /* height: 400vh;  */
+    height: calc(100vh * 0.6 * 4); /* Adjust dynamically */
     width: 100%;
     background-color: var(--black-bg);
   }
@@ -240,11 +260,11 @@
   }
   
 
-  .cut-text {
+  /* .cut-text {
     text-decoration: line-through;
-    color: rgba(255, 255, 255, 0.6); /* Optional: Lighter color for the cut price */
-    font-weight: normal; /* Ensures it doesn't appear too bold */
-  }
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: normal;
+  } */
   
   /* Responsive Design */
 @media (max-width: 768px) {
