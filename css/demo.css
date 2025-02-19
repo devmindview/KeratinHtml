@@ -361,7 +361,6 @@
         grid-template-rows: repeat(2, auto);  /* Two rows */
     }
   
-    /* Ensure first and second videos are in the top row, and third and fourth are in the bottom row */
     #demo-video .demo-content .video:nth-child(1),
     #demo-video .demo-content .video:nth-child(2) {
         grid-row: 1;
@@ -409,32 +408,29 @@
 
   /* Slider section */
 
- /* Container */
-/* Full-screen height with centering */
-/* Ensure the container takes full height */
+
 .carousel-container {
   width: 90%;
   margin: auto;
   overflow: hidden;
   position: relative;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-/* Slide wrapper with 80% height */
 .carousel-wrapper {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  height: 80%; /* Takes 80% height of the container */
+  height: 80%; 
 }
 
 /* Position the pagination dots at the bottom */
 .carousel-dots {
   position: absolute;
-  bottom: 10%; /* Moves the dots closer to the bottom */
+  bottom: 10%; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -443,7 +439,7 @@
 
 /* Each slide */
 .carousel-slide {
-  flex: 0 0 33.33%; /* Default: 3 images per view */
+  flex: 0 0 33.33%; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -464,7 +460,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(48, 48, 48, 0.427);
   color: white;
   border: none;
   padding: 10px 15px;
