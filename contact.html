@@ -111,22 +111,39 @@
         <!-- Hidden iframe to prevent redirection -->
         <iframe name="hidden_iframe" style="display:none;"></iframe>
 
-        <script>
-            document.getElementById("customForm").addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent the default form submission
-                var form = this;
-                fetch(form.action, {
-                    method: "POST",
-                    body: new FormData(form),
-                    mode: "no-cors"
-                }).then(() => {
-                    alert("Form Submitted Successfully!"); // Success message
-                    form.reset(); // Clear the form
-                }).catch(error => {
-                    alert("Error: " + error); // Error message if submission fails
-                });
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="popup-modal" style="display: none;">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("customForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            var form = this;
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                mode: "no-cors"
+            }).then(() => {
+                showPopup("Form Submitted Successfully!"); // Show popup on success
+                form.reset(); // Clear the form
+            }).catch(error => {
+                showPopup("Error: " + error); // Show popup on error
             });
-        </script>
+        });
+
+        function showPopup(message) {
+            document.getElementById("popup-message").innerText = message;
+            document.getElementById("popup-modal").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup-modal").style.display = "none";
+        }
+    </script>
 
     </section>
 

@@ -100,43 +100,61 @@
                 aspernatur voluptatum tempora ?</p>
         </div>
         <form id="customForm"
-            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdqTJJbdDAnRyavSyfKHWeissPt2-MFKmeSJANlVB8K8z1QTA/formResponse"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfwV23K_Lrpp-sZT5_jhvf6PXcm2yMX0D0SPzgXojAMtOzL4w/formResponse"
             method="POST" target="hidden_iframe">
-            <input class="custom-input" type="text" name="entry.705990903" placeholder="Enter Your Name" required>
-            <input class="custom-input" type="email" name="entry.1926131105" placeholder="Enter Your Email" required>
-            <input class="custom-input" type="number" name="entry.685065271" placeholder="Contact Number" required>
-            <input class="custom-input" type="number" name="entry.1663791718" placeholder="Order Number" required>
-            <input class="custom-input" type="number" name="entry.736591223" placeholder="Serial Number" required>
+            <input class="custom-input" type="text" name="entry.1285217518" placeholder="Enter Your Name" required>
+            <input class="custom-input" type="email" name="entry.789081749" placeholder="Enter Your Email" required>
+            <input class="custom-input" type="number" name="entry.389030366" placeholder="Contact Number" required>
+            <input class="custom-input" type="number" name="entry.1008648953" placeholder="Order Number" required>
+            <input class="custom-input" type="number" name="entry.56130515" placeholder="Serial Number" required>
 
-            <select class="custom-select" name="entry.736591223">
+            <select class="custom-select" name="entry.51214638">
                 <option selected disabled value="Buy">Select Your Buyer</option>
                 <option value="Amazon">Amazon</option>
                 <option value="Flipkart">Flipkart</option>
                 <option value="Retailer">Retailer</option>
             </select>
-                <!-- <input class="custom-file-input" type="file" name="entry.736591223"> -->
+            <input class="custom-input" type="url" name="entry.1109173175" placeholder="Paste Your Warrnty doc/pdf/drive url" required>
             <button class="submitButton" type="submit">Send</button>
         </form>
 
         <!-- Hidden iframe to prevent redirection -->
         <iframe name="hidden_iframe" style="display:none;"></iframe>
+        
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="popup-modal" style="display: none;">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
 
-        <script>
-            document.getElementById("customForm").addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent the default form submission
-                var form = this;
-                fetch(form.action, {
-                    method: "POST",
-                    body: new FormData(form),
-                    mode: "no-cors"
-                }).then(() => {
-                    alert("Form Submitted Successfully!"); // Success message
-                    form.reset(); // Clear the form
-                }).catch(error => {
-                    alert("Error: " + error); // Error message if submission fails
-                });
+    <script>
+        document.getElementById("customForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            var form = this;
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                mode: "no-cors"
+            }).then(() => {
+                showPopup("Form Submitted Successfully!"); // Show popup on success
+                form.reset(); // Clear the form
+            }).catch(error => {
+                showPopup("Error: " + error); // Show popup on error
             });
-        </script>
+        });
+
+        function showPopup(message) {
+            document.getElementById("popup-message").innerText = message;
+            document.getElementById("popup-modal").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup-modal").style.display = "none";
+        }
+    </script>
+
 
     </section>
 
