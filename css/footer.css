@@ -1,0 +1,154 @@
+@import url('./font.css');
+
+
+:root {
+    --primary-color: #E75025;
+    --secondary-color: #f6f6f2;
+    --black-bg: #101111;
+    --light-bg: #ffffff;
+    --header-bg: #1F2124;
+  }
+  html {
+    scroll-behavior: smooth !important;
+    font-family: 'helvetica';
+    font-weight: normal;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: y mandatory;
+  }
+ 
+ 
+ footer {
+    background-color: var(--secondary-color);
+    height: 25rem;
+    padding-top: 4rem;
+    z-index: 1000 !important;
+  }
+  
+  .footerImg {
+    width: 12rem;
+    margin-bottom: 1rem;
+  }
+  
+  footer h6 {
+    font-family: 'helvetica' ;
+    font-weight: bold;
+  }
+
+  footer .row {
+    font-family: 'helvetica' ;
+    font-weight: normal;
+  }
+
+  footer .list-unstyled li {
+
+    margin-top: 0.5rem;
+
+  }
+  footer .list-unstyled li a {
+    color: #2e2e2e;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  footer .list-unstyled li a:hover {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    transform: scale(1) translateY(3px);
+    cursor: pointer;
+  }
+
+  .footerIcons-bottom {
+    display: none;
+  }
+  
+  .footerIcons {
+    display: flex;
+    justify-content: start;
+    gap: 0.5rem;
+  }
+  
+  .footerIcons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .footerIcons a i {
+    font-size: 14px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1025px) {
+    footer {
+      min-height: fit-content;
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+    }
+  
+    .footerIcons {
+      display: none;
+    }
+
+    footer .list-unstyled li {
+
+        margin-top: 0.3rem;
+    
+      }
+    .footerIcons-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footerIcons-bottom a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-color: var(--primary-color);
+      padding: 0.5rem;
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    
+    .footerIcons-bottom a i {
+      font-size: 14px;
+    }
+  
+    footer .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  
+    footer .col-md-4 {
+      flex: 1 1 100%;
+      text-align: start;
+    }
+  
+    /* Company and Connect in 1st row */
+    footer .col-md-4:nth-child(2),
+    .col-md-4:nth-child(3) {
+      flex: 1 1 calc(50% - 1rem);
+      /* margin-bottom: 1rem; */
+    }
+  
+    /* Information and More in second row */
+    footer .col-md-4:nth-child(4),
+    .col-md-4:nth-child(5) {
+      flex: 1 1 calc(50% - 1rem);
+      /* margin-bottom: 1rem; */
+    }
+  }

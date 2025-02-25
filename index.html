@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Keratin</title>
   <!-- Standard Favicon -->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico"  type="image/x-icon">
 
   <!-- Apple Touch Icon (For iOS Devices) -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
@@ -38,6 +38,9 @@
   <!-- model viewer -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -118,7 +121,7 @@
     </div> -->
     <div class="text-container vh-100">
       <h2>25W FAST CHARGER <br> (PD3.0,PPS)</h2><img src="images/charger_1.webp" alt="img" />
-      <small id="scroll-text" class="text-light">Scroll <i style="background-color: #3b3b3c81;" class="rounded p-1 fa-solid fa-arrow-down fa-bounce"></i></small>
+      <small id="scroll-text" class="text-light">Scroll <i style="background-color: #3b3b3c81;" class="ms-2 rounded p-1 fa-solid fa-arrow-down fa-bounce"></i></small>
     </div>
     <div class="text-container">
       <h2>World’s 1st <br> HOLD & CHARGE</h2><img src="images/charger_2.webp" alt="" />
@@ -209,7 +212,7 @@
 
 
 
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
       const modelViewer = document.querySelector(".model-viewer");
       const cursor = document.createElement("div");
@@ -234,10 +237,10 @@
       });
     });
 
-  </script>
+  </script> -->
 
   <section id="demo-video">
-    <div class="demo-content">
+    <div class="demo-content" data-aos="fade-up">
       <div class="video d-flex align-items-center justify-content-center">
         <div class="w-100 px-3">
           <h3>Hold & Charge</h3>
@@ -287,7 +290,7 @@
   </script>
 
   <section id="spec">
-    <div class="spec-inner">
+    <div class="spec-inner" data-aos="fade-up">
       <!-- Left Column -->
       <div class="spec-col">
         <img class="w-100 img-fluid" src="images/spec-img.png" alt="Product Image" />
@@ -314,8 +317,11 @@
             <div class="col-6 spec-detail-text text-start">5.2 * 5.2 * 5.5 cm</div>
             <div class="col-6 spec-detail-text text-start">85 grams</div>
           </div>
-          <!-- <small class="p-2 rounded" style="background-color:rgba(255, 106, 0, 0.5);">PRE ORDER @ M.R.P : <span
-              class="cut-text">1699</span> 1,099</small> -->
+          <div class="col-12 rounded price-tag">
+            <p class="p-0 m-0 text-light" >PRE ORDER @ M.R.P : <span
+              class="cut-text">1699</span> 1,099</p>
+          </div>
+
         </div>
 
       </div>
@@ -323,7 +329,7 @@
   </section>
 
   <section id="feature">
-    <div class="feature-inner">
+    <div class="feature-inner" data-aos="fade-up">
       <!-- Left Column -->
       <div class="feature-col d-flex align-items-center justify-content-center">
         <div class="px-md-4">
@@ -341,9 +347,6 @@
           <p class="text-start">AUTO ADAPT - Delivering the power required by the device plugged in ICVM (Inelligent
             voltage & Current Management)</p>
           <p class="fw-bold text-start">DESIGNED, ENGINEERED & MADE IN INDIA</p>
-          <p class="text-start" style="font-size: 10px;">NOTE : THE DEVICE IS COMPAITAIBLE TO CHARGE ALL USB-C DEVICES
-            BUT CAN’T HOLD HEAVY DEVICES LIKE POWERBANKS, LARGE SPEAKERS, TABLETS & iPADS, and more
-          </p>
         </div>
       </div>
       <!-- Right Column -->
@@ -354,14 +357,18 @@
           Your browser does not support the video tag.
         </video> -->
         <video class="feature-video" autoplay muted loop playsinline>
-          <source src="images/Keratin_Edit_Final_HiRes (1).mp4" type="video/mp4">
+          <source src="images/Keratin_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-
-
       </div>
     </div>
   </section>
+
+  <div class="note-text container mb-1 w-100 d-flex align-items-center justify-content-center" style="border-radius: 2rem 2rem 0rem 0rem; background-color: #f6f6f2;">
+    <p class="m-0 p-2 text-secondary" style="font-size: 14px;">NOTE : THE DEVICE IS COMPAITAIBLE TO CHARGE ALL USB-C DEVICES
+      BUT CAN’T HOLD HEAVY DEVICES LIKE POWERBANKS, LARGE SPEAKERS, TABLETS & iPADS, and more
+    </p>
+  </div>
 
   <!-- Footer section -->
   <div id="footer"></div>
@@ -379,5 +386,17 @@
 
 <!-- glightbox -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<!-- aos -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 300,
+    easing: "ease-in-out", // Optional: Smooth transition effect
+    mirror: true 
+  });
+</script>
+
 
 </html>

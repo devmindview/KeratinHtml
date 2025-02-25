@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Support | Keratin</title>
+
+      <!-- Standard Favicon -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Apple Touch Icon (For iOS Devices) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Theme Color (For Mobile Browser UI) -->
+  <meta name="theme-color" content="#ffffff">
+    <!-- css -->
+    <link rel="stylesheet" href="css/form.css">
+    <!-- boostrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header class="header" id="header">
+        <a href="index.html" class="text-decoration-none">
+            <img class="headerImg" src="images/header_logo.svg" alt="head-logo" />
+        </a>
+        <nav class="headerNav">
+            <a href="preorder.html" class="preBtn">Pre Order</a>
+            <button class="menuBtn"><img style="width: 16px;" src="images/burger.svg" alt="bar" /></button>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.getElementById('header');
+            const button = document.querySelector('.menuBtn');
+            const menu = document.querySelector('.menu');
+            const menuIcon = button.querySelector('img');
+
+            const defaultIcon = "images/burger.svg";
+            const activeIcon = "images/close.svg";
+
+            let lastScrollTop = 0;
+
+            button.addEventListener('click', function () {
+                menu.classList.toggle('show');
+                menuIcon.src = menu.classList.contains('show') ? activeIcon : defaultIcon;
+            });
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+
+                if (scrollTop > lastScrollTop && scrollTop > 200) {
+                    // Scrolling down, hide the header & close menu
+                    header.classList.add('hidden');
+                    menu.classList.remove('show'); // Close the menu
+                    menuIcon.src = defaultIcon; // Reset to burger icon
+                } else if (scrollTop < lastScrollTop && scrollTop > 150) {
+                    // Scrolling up, show the header
+                    header.classList.remove('hidden');
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+
+    <menu class="menu">
+        <div class="menu-top">
+            <a class="text-secondary text-decoration-none" href="index.html">Home</a>
+            <a class="text-secondary text-decoration-none" href="about.html">About</a>
+            <a class="text-secondary text-decoration-none" href="demo.html">Demo</a>
+            <a class="text-secondary text-decoration-none" href="contact.html">Contact</a>
+            <a class="text-secondary text-decoration-none" href="faq.html">Faq</a>
+        </div>
+
+        <hr />
+        <div class="menu-bottom">
+            <a href="#" class="text-light"><i class="fa-brands text-secondary fa-linkedin-in"></i></a>
+            <a href="#" class="text-light"><i class="fa-brands text-secondary fa-x-twitter"></i></a>
+            <a href="#" class="text-light"><i class="fa-brands text-secondary fa-instagram"></i></a>
+            <a href="#" class="text-light"><i class="fa-brands text-secondary fa-facebook-f"></i></a>
+            <a href="#" class="text-light"><i class="fa-brands text-secondary fa-threads"></i></a>
+        </div>
+        <hr />
+        <div class="menu-bottom">
+            <img style="width: 4rem;" src="images/amazon.svg" alt="amazon" />
+            <img style="width: 5rem;" src="images/flipkart.svg" alt="flipkart" />
+        </div>
+    </menu>
+
+    <section class="form-section">
+        <div class="form-container">
+            <div class="info-box">
+                <h2>Product Support</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Rem ipsa necessitatibus officiis
+                    aspernatur voluptatum tempora ?</p>
+            </div>
+            <div class="form-box text-center">
+                <form id="customForm"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSepD8ZTU6F8KNau6DWzro6-UzfnrVZ9THLl-FF633z-3AGSUg/formResponse"
+                method="POST" target="hidden_iframe">
+                <input class="custom-input" type="text" name="entry.50136868" placeholder="Enter Your Name" required>
+                <input class="custom-input" type="tel" name="entry.1479473963" placeholder="Whatsapp Number" required>
+                <input class="custom-input" type="email" name="entry.111809578" placeholder="Enter Your Email" required>
+                <input class="custom-input" type="tel" name="entry.788306555" placeholder="Contact Number" required>
+                <input class="custom-input" type="text" name="entry.1817607660" placeholder="Query" required>
+
+                <button class="submitButton" type="submit">Send</button>
+            </form>
+            </div>
+    
+        </div>
+
+
+
+        <!-- Hidden iframe to prevent redirection -->
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="popup-modal" style="display: none;">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("customForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            var form = this;
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                mode: "no-cors"
+            }).then(() => {
+                showPopup("Form Submitted Successfully!"); // Show popup on success
+                form.reset(); // Clear the form
+            }).catch(error => {
+                showPopup("Error: " + error); // Show popup on error
+            });
+        });
+
+        function showPopup(message) {
+            document.getElementById("popup-message").innerText = message;
+            document.getElementById("popup-modal").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup-modal").style.display = "none";
+        }
+    </script>
+
+    </section>
+
+    <!-- Footer section -->
+    <div id="footer"></div>
+
+    <script>
+        // Load the footer from the footer.html file
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
+</body>
+
+<!-- bootrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>

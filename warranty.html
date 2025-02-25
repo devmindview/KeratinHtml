@@ -91,32 +91,37 @@
         </div>
     </menu>
 
-    <section class="ask-experts">
-
-
-        <div class="top-tab">
-            <h2>Warranty</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Rem ipsa necessitatibus officiis
-                aspernatur voluptatum tempora ?</p>
+    <section class="form-section">
+        <div class="form-container">
+            <div class="info-box">
+                <h2>Warranty</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Rem ipsa necessitatibus officiis
+                    aspernatur voluptatum tempora ?</p>
+            </div>
+            <div class="form-box">
+                <form id="customForm"
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfwV23K_Lrpp-sZT5_jhvf6PXcm2yMX0D0SPzgXojAMtOzL4w/formResponse"
+                method="POST" target="hidden_iframe">
+                <input class="custom-input" type="text" name="entry.1285217518" placeholder="Enter Your Name" required>
+                <input class="custom-input" type="email" name="entry.789081749" placeholder="Enter Your Email" required>
+                <input class="custom-input" type="number" name="entry.389030366" placeholder="Contact Number" required>
+                <input class="custom-input" type="number" name="entry.1008648953" placeholder="Order Number" required>
+                <input class="custom-input" type="number" name="entry.56130515" placeholder="Serial Number" required>
+    
+                <select class="custom-select" name="entry.51214638">
+                    <option selected disabled value="Buy">Select Your Buyer</option>
+                    <option value="Amazon">Amazon</option>
+                    <option value="Flipkart">Flipkart</option>
+                    <option value="Retailer">Retailer</option>
+                </select>
+                <input class="custom-input" type="url" name="entry.1109173175" placeholder="Paste Your Warrnty doc/pdf/drive url" required>
+                <button class="submitButton" type="submit">Send</button>
+            </form>
+    
+            </div>
         </div>
-        <form id="customForm"
-            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfwV23K_Lrpp-sZT5_jhvf6PXcm2yMX0D0SPzgXojAMtOzL4w/formResponse"
-            method="POST" target="hidden_iframe">
-            <input class="custom-input" type="text" name="entry.1285217518" placeholder="Enter Your Name" required>
-            <input class="custom-input" type="email" name="entry.789081749" placeholder="Enter Your Email" required>
-            <input class="custom-input" type="number" name="entry.389030366" placeholder="Contact Number" required>
-            <input class="custom-input" type="number" name="entry.1008648953" placeholder="Order Number" required>
-            <input class="custom-input" type="number" name="entry.56130515" placeholder="Serial Number" required>
 
-            <select class="custom-select" name="entry.51214638">
-                <option selected disabled value="Buy">Select Your Buyer</option>
-                <option value="Amazon">Amazon</option>
-                <option value="Flipkart">Flipkart</option>
-                <option value="Retailer">Retailer</option>
-            </select>
-            <input class="custom-input" type="url" name="entry.1109173175" placeholder="Paste Your Warrnty doc/pdf/drive url" required>
-            <button class="submitButton" type="submit">Send</button>
-        </form>
+
 
         <!-- Hidden iframe to prevent redirection -->
         <iframe name="hidden_iframe" style="display:none;"></iframe>

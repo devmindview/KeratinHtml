@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo | Keratin</title>
 
-    <!-- Standard Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Standard Favicon -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- Apple Touch Icon (For iOS Devices) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  
-    <!-- Theme Color (For Mobile Browser UI) -->
-    <meta name="theme-color" content="#ffffff">
-    
+  <!-- Apple Touch Icon (For iOS Devices) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Theme Color (For Mobile Browser UI) -->
+  <meta name="theme-color" content="#ffffff">
+
   <!-- css -->
   <link rel="stylesheet" href="css/demo.css">
   <!-- glight box -->
@@ -42,32 +42,32 @@
       const button = document.querySelector('.menuBtn');
       const menu = document.querySelector('.menu');
       const menuIcon = button.querySelector('img');
-  
+
       const defaultIcon = "images/burger.svg";
       const activeIcon = "images/close.svg";
-  
+
       let lastScrollTop = 0;
-  
+
       button.addEventListener('click', function () {
-          menu.classList.toggle('show');
-          menuIcon.src = menu.classList.contains('show') ? activeIcon : defaultIcon;
+        menu.classList.toggle('show');
+        menuIcon.src = menu.classList.contains('show') ? activeIcon : defaultIcon;
       });
-  
+
       window.addEventListener('scroll', () => {
-          const scrollTop = window.scrollY;
-  
-          if (scrollTop > lastScrollTop && scrollTop > 200) {
-              // Scrolling down, hide the header & close menu
-              header.classList.add('hidden');
-              menu.classList.remove('show'); // Close the menu
-              menuIcon.src = defaultIcon; // Reset to burger icon
-          } else if (scrollTop < lastScrollTop && scrollTop > 150) {
-              // Scrolling up, show the header
-              header.classList.remove('hidden');
-          }
-          lastScrollTop = scrollTop;
+        const scrollTop = window.scrollY;
+
+        if (scrollTop > lastScrollTop && scrollTop > 200) {
+          // Scrolling down, hide the header & close menu
+          header.classList.add('hidden');
+          menu.classList.remove('show'); // Close the menu
+          menuIcon.src = defaultIcon; // Reset to burger icon
+        } else if (scrollTop < lastScrollTop && scrollTop > 150) {
+          // Scrolling up, show the header
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
       });
-  });
+    });
   </script>
 
   <menu class="menu">
@@ -77,9 +77,9 @@
       <a class="text-light text-decoration-none" href="demo.html">Demo</a>
       <a class="text-secondary text-decoration-none" href="contact.html">Contact</a>
       <a class="text-secondary text-decoration-none" href="faq.html">Faq</a>
-  </div>
-  
-    
+    </div>
+
+
     <hr />
     <div class="menu-bottom">
       <a href="#" class="text-light"><i class="fa-brands text-secondary fa-linkedin-in"></i></a>
@@ -95,129 +95,134 @@
     </div>
   </menu>
 
-    <section class="demo-hero">
-      <div class="container h-100 d-flex align-items-center justify-content-center">
-        <div class="row w-100 h-100 d-flex flex-wrap align-items-center justify-content-center">
-          <!-- Text Section -->
-          <div class="hero-text col-12 col-md-7 d-flex flex-column text-start text-md-start order-2 order-md-1">
-            <h1 class="text-top">Still Charging,</h1>
-            <h1 class="text-top">Now Holding</h1>
-            <h1 class="text-bottom" id="text-bottom">FAST CHARGING</h1>
-          </div>
+  <section class="demo-hero">
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+      <div class="row w-100 h-100 d-flex flex-wrap align-items-center justify-content-center">
+        <!-- Text Section -->
+        <div class="hero-text col-12 col-md-7 d-flex flex-column text-start text-md-start order-2 order-md-1">
+          <h1 class="text-top">HOLD & CHARGE</h1>
+          <h1 class="text-top">with features of</h1>
+          <h1 class="text-bottom" id="text-bottom">FAST CHARGING</h1>
+        </div>
 
-          <!-- Image Section -->
-          <div class="hero-img p-5 col-12 col-md-5 d-flex align-items-center justify-content-center order-1 order-md-2">
-            <img class="img-fluid mb-3 mb-md-0" src="images/charger_3.webp" alt="ba" />
-          </div>
+        <!-- Image Section -->
+        <div class="hero-img p-5 col-12 col-md-5 d-flex align-items-center justify-content-center order-1 order-md-2">
+          <img class="img-fluid mb-3 mb-md-0" src="images/charger_3.webp" alt="ba" />
         </div>
       </div>
-    </section>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const textBottom = document.getElementById('text-bottom');
-        const textArray = ['FAST CHARGING', '2 YEARS WARRANTY', 'INTELLIGENT CHIP INSIDE', '7 LAYER OF PROTECTION', 'COMPACT & STYLISH', 'AUTO ADAPT'];
-        let index = 0;
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const textBottom = document.getElementById('text-bottom');
+      const textArray = ['FAST CHARGING', '2 YEARS WARRANTY', 'INTELLIGENT CHIP INSIDE', '7 LAYER OF PROTECTION', 'COMPACT & STYLISH', 'AUTO ADAPT'];
+      let index = 0;
 
-        setInterval(() => {
-          textBottom.textContent = textArray[index];
-          index = (index + 1) % textArray.length;
-        }, 700);
-      });
+      setInterval(() => {
+        textBottom.textContent = textArray[index];
+        index = (index + 1) % textArray.length;
+      }, 700);
+    });
 
-    </script>
+  </script>
 
-    <section id="demo-video">
-      <div class="demo-content">
-        <div class="video d-flex align-items-center justify-content-center">
-          <div class="w-100 px-3">
-            <h3>Hold & Charge</h3>
-            <p>Hold and charge your phone securely, no matter where you are - all in one simple design.</p>
-          </div>
+  <section id="demo-video">
+    <div class="demo-content">
+      <div class="video d-flex align-items-center justify-content-center">
+        <div class="w-100 px-3">
+          <h3>Hold & Charge</h3>
+          <p>Hold and charge your phone securely, no matter where you are - all in one simple design.</p>
         </div>
-        <div class="video">
-          <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
-            <img class="img-fluid video-thumbnail" src="images/thumbnail.jpeg" alt="image" />
-            <img class="img-fluid play-img" src="images/play.svg" alt="Play Button" />
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
-            <img class="img-fluid video-thumbnail" src="images/thumbnail.jpeg" alt="image" />
-            <img class="img-fluid play-img" src="images/play.svg" alt="Play Button" />
-          </a>
-        </div>
-
-        <div class="video">
-          <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
-            <img class="img-fluid video-thumbnail" src="images/thumbnail.jpeg" alt="image" />
-            <img class="img-fluid play-img" src="images/play.svg" alt="Play Button" />
-          </a>
-        </div>
-
       </div>
-    </section>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function (event) {
-        const lightbox = GLightbox({
-          selector: '.glightbox',
-          touchNavigation: true,
-          loop: true,
-          autoplayVideos: true,
-          onOpen: () => {
-            console.log('Lightbox opened')
-          },
-          beforeSlideLoad: (slide, data) => {
-            // Need to execute a script in the slide?
-            // You can do that here...
-          }
-        })
-      })
-    </script>
-
-    <section class="carousel-container">
-      <div class="carousel-wrapper">
-        <div class="carousel-slide"><img src="images/spec-img.png" alt="Slide 1"></div>
-        <div class="carousel-slide"><img src="images/spec-img.png" alt="Slide 2"></div>
-        <div class="carousel-slide"><img src="images/spec-img.png" alt="Slide 3"></div>
-        <div class="carousel-slide"><img src="images/spec-img.png" alt="Slide 4"></div>
-        <div class="carousel-slide"><img src="images/spec-img.png" alt="Slide 5"></div>
-        <div class="carousel-slide"><img src="images/spec-img.png" alt="Slide 6"></div>
+      <div class="video">
+        <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+          <img class="img-fluid video-thumbnail" src="images/thumbnail.jpeg" alt="image" />
+          <img class="img-fluid play-img" src="images/play.svg" alt="Play Button" />
+        </a>
       </div>
 
-      <!-- Navigation buttons -->
-      <button class="carousel-btn prev">&#10094;</button>
-      <button class="carousel-btn next">&#10095;</button>
+      <div class="video">
+        <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+          <img class="img-fluid video-thumbnail" src="images/thumbnail.jpeg" alt="image" />
+          <img class="img-fluid play-img" src="images/play.svg" alt="Play Button" />
+        </a>
+      </div>
 
-      <!-- Pagination dots -->
-      <div class="carousel-dots"></div>
-    </section>
+      <div class="video">
+        <a href="https://youtu.be/SD3nTHAczF0?si=ygqDdnkKuYl-WpuV" class="glightbox">
+          <img class="img-fluid video-thumbnail" src="images/thumbnail.jpeg" alt="image" />
+          <img class="img-fluid play-img" src="images/play.svg" alt="Play Button" />
+        </a>
+      </div>
 
-    <script>
-      const wrapper = document.querySelector(".carousel-wrapper");
-      const slides = document.querySelectorAll(".carousel-slide");
-      const prevBtn = document.querySelector(".prev");
-      const nextBtn = document.querySelector(".next");
-      const dotsContainer = document.querySelector(".carousel-dots");
-      let currentIndex = 0;
-      let slidesPerView = 3; // Default for desktop
-      let autoPlayInterval;
+    </div>
+  </section>
 
-      // Detect screen size for responsive slides
-      function updateSlidesPerView() {
-        if (window.innerWidth <= 480) {
-          slidesPerView = 1; // Mobile
-        } else if (window.innerWidth <= 768) {
-          slidesPerView = 2; // Tablet
-        } else {
-          slidesPerView = 3; // Desktop
+  <script>
+    document.addEventListener('DOMContentLoaded', function (event) {
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true,
+        onOpen: () => {
+          console.log('Lightbox opened')
+        },
+        beforeSlideLoad: (slide, data) => {
+          // Need to execute a script in the slide?
+          // You can do that here...
         }
-        updateSlide(currentIndex);
-      }
+      })
+    })
+  </script>
 
-      // Create dots dynamically
-      const totalDots = Math.ceil(slides.length / slidesPerView);
+  <section class="carousel-container">
+    <div class="carousel-wrapper">
+      <div class="carousel-slide"><img src="images/spec-img.png" alt="Slide 1"></div>
+      <div class="carousel-slide"><img src="images/charger_1.webp" alt="Slide 2"></div>
+      <div class="carousel-slide"><img src="images/charger_2.webp" alt="Slide 3"></div>
+      <div class="carousel-slide"><img src="images/charger_3.webp" alt="Slide 4"></div>
+      <div class="carousel-slide"><img src="images/formsample.jpg" alt="Slide 5"></div>
+      <div class="carousel-slide"><img src="images/india.svg" alt="Slide 6"></div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+
+    <!-- Pagination dots -->
+    <div class="carousel-dots"></div>
+  </section>
+
+
+  <!-- <script>
+    const wrapper = document.querySelector(".carousel-wrapper");
+    const slides = document.querySelectorAll(".carousel-slide");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const dotsContainer = document.querySelector(".carousel-dots");
+    let currentIndex = 0;
+    let slidesPerView = 3; // Default for desktop
+    let autoPlayInterval;
+    let totalDots = Math.ceil(slides.length / slidesPerView);
+
+    // Detect screen size and update slides per view
+    function updateSlidesPerView() {
+      if (window.innerWidth <= 480) {
+        slidesPerView = 1; // Mobile
+      } else if (window.innerWidth <= 768) {
+        slidesPerView = 2; // Tablet
+      } else {
+        slidesPerView = 3; // Desktop
+      }
+      totalDots = Math.ceil(slides.length / slidesPerView);
+      updateDots();
+      updateSlide(0); // Reset to first slide after update
+    }
+
+    // Create dots dynamically
+    function updateDots() {
+      dotsContainer.innerHTML = ""; // Clear previous dots
       for (let i = 0; i < totalDots; i++) {
         const dot = document.createElement("div");
         dot.classList.add("dot");
@@ -225,49 +230,8 @@
         dot.setAttribute("data-index", i);
         dotsContainer.appendChild(dot);
       }
-
-      const dots = document.querySelectorAll(".dot");
-
-      function updateSlide(index) {
-        currentIndex = index;
-        wrapper.style.transform = `translateX(-${currentIndex * (100 / slidesPerView)}%)`;
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[currentIndex].classList.add("active");
-      }
-
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalDots;
-        updateSlide(currentIndex);
-      }
-
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalDots) % totalDots;
-        updateSlide(currentIndex);
-      }
-
-      function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 3000);
-      }
-
-      function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-      }
-
-      // Button controls
-      nextBtn.addEventListener("click", () => {
-        nextSlide();
-        stopAutoPlay();
-        startAutoPlay();
-      });
-
-      prevBtn.addEventListener("click", () => {
-        prevSlide();
-        stopAutoPlay();
-        startAutoPlay();
-      });
-
-      // Dot navigation
-      dots.forEach(dot => {
+      // Add event listeners for new dots
+      document.querySelectorAll(".dot").forEach(dot => {
         dot.addEventListener("click", (e) => {
           const index = parseInt(e.target.getAttribute("data-index"));
           updateSlide(index);
@@ -275,24 +239,161 @@
           startAutoPlay();
         });
       });
+    }
 
-      // Update slide view on window resize
-      window.addEventListener("resize", updateSlidesPerView);
-      updateSlidesPerView(); // Initial setup
+    // Move slides
+    function updateSlide(index) {
+      currentIndex = index;
+      const shift = (100 / slidesPerView) * currentIndex;
+      wrapper.style.transform = `translateX(-${shift}%)`;
+      document.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
+      document.querySelectorAll(".dot")[currentIndex].classList.add("active");
+    }
 
-      // Auto-start carousel
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalDots;
+      updateSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalDots) % totalDots;
+      updateSlide(currentIndex);
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+
+    // Button controls
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      stopAutoPlay();
       startAutoPlay();
-    </script>
+    });
 
-    <!-- Footer section -->
-    <div id="footer"></div>
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      stopAutoPlay();
+      startAutoPlay();
+    });
 
-    <script>
-      // Load the footer from the footer.html file
-      fetch('footer.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('footer').innerHTML = data);
-    </script>
+    // Update slides on window resize
+    window.addEventListener("resize", updateSlidesPerView);
+    updateSlidesPerView(); // Initial setup
+
+    // Auto-start carousel
+    startAutoPlay();
+
+  </script> -->
+
+  <script>
+    const wrapper = document.querySelector(".carousel-wrapper");
+    const slides = document.querySelectorAll(".carousel-slide");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const dotsContainer = document.querySelector(".carousel-dots");
+    let currentIndex = 0;
+    let slidesPerView = 3; // Default for desktop
+    let autoPlayInterval;
+    let totalDots;
+
+    // Detect screen size and update slides per view
+    function updateSlidesPerView() {
+      if (window.innerWidth <= 480) {
+        slidesPerView = 1; // Mobile
+      } else if (window.innerWidth <= 768) {
+        slidesPerView = 2; // Tablet
+      } else {
+        slidesPerView = 3; // Desktop
+      }
+      totalDots = Math.ceil(slides.length / slidesPerView);
+      updateDots();
+      updateSlide(0); // Reset to first slide after update
+    }
+
+    // Create dots dynamically
+    function updateDots() {
+      dotsContainer.innerHTML = ""; // Clear previous dots
+      for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active");
+        dot.setAttribute("data-index", i);
+        dotsContainer.appendChild(dot);
+      }
+      // Add event listeners for new dots
+      document.querySelectorAll(".dot").forEach(dot => {
+        dot.addEventListener("click", (e) => {
+          const index = parseInt(e.target.getAttribute("data-index"));
+          updateSlide(index);
+          stopAutoPlay();
+          startAutoPlay();
+        });
+      });
+    }
+
+    // Move slides
+    function updateSlide(index) {
+      currentIndex = index;
+      const slideWidth = slides[0].clientWidth; // Get the width of a single slide
+      const shift = slideWidth * slidesPerView * currentIndex;
+      wrapper.style.transform = `translateX(-${shift}px)`;
+      document.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
+      document.querySelectorAll(".dot")[currentIndex].classList.add("active");
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalDots;
+      updateSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalDots) % totalDots;
+      updateSlide(currentIndex);
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+
+    // Button controls
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      stopAutoPlay();
+      startAutoPlay();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      stopAutoPlay();
+      startAutoPlay();
+    });
+
+    // Update slides on window resize
+    window.addEventListener("resize", updateSlidesPerView);
+    updateSlidesPerView(); // Initial setup
+
+    // Auto-start carousel
+    startAutoPlay();
+  </script>
+
+  <!-- Footer section -->
+  <div id="footer"></div>
+
+  <script>
+    // Load the footer from the footer.html file
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
 </body>
 
 <!-- bootrap -->
