@@ -22,9 +22,10 @@
  
  footer {
     background-color: var(--secondary-color);
-    height: 25rem;
+    max-height: fit-content;
     padding-top: 4rem;
     z-index: 1000 !important;
+    padding-bottom: 2rem;
   }
   
   .footerImg {
