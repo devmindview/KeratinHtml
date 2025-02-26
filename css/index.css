@@ -291,6 +291,21 @@
   }
 }
 
+@media (min-width: 1201px){
+  .hero h2 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'geist' ;
+    font-weight: 900;
+  }
+
+  .hero img {
+    width: 50%;
+  }
+
+}
+
   /* Modal Section */
   
   .model-view-section {

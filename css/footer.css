@@ -168,4 +168,9 @@
       transform: scale(1) translateY(3px);
       cursor: pointer;
     }
+    footer h6 {
+      /* color: #2e2e2e;
+      text-decoration: none; */
+      font-size: 0.8rem;
+    }
   }
