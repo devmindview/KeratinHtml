@@ -235,24 +235,21 @@
     opacity: 1;
   }
 
-  .hero h1 {
+
+  .hero h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     color: white;
-    font-family: 'geist' ;
+    font-family: 'geist';
     font-weight: 900;
-  }
-  .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: white;
-    font-family: 'geist' ;
-    font-weight: 900;
-  }
+}
 
-  .hero img {
-    width: 25rem;
-  }
+/* Image responsiveness */
+.hero img {
+    max-width: 50%;
+    height: auto;
+}
+
 
   #scroll-text {
     position: absolute;
@@ -276,34 +273,28 @@
       text-align: center; 
   }
   
-  .text-container h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-  }
-
   .text-container h2 {
-    font-size: 1.7rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
 }
 
-  .text-container img {
-      max-width: 80%;
+.hero img {
+    max-width: 80%;
+}
+
+}
+
+@media (min-width: 2500px) {
+  .text-container {
+      max-width: 1400px;
   }
-}
 
-@media (min-width: 1201px){
   .hero h2 {
-    font-size: 4.5rem;
-    margin-bottom: 20px;
-    color: white;
-    font-family: 'geist' ;
-    font-weight: 900;
+      font-size: 4rem;
   }
 
   .hero img {
-    width: 50%;
+      max-width: 50%;
   }
-
 }
 
   /* Modal Section */
@@ -481,7 +472,7 @@
 /* Desktop View (1024px and above) */
 @media (min-width: 1024px) {
   #demo-video .demo-content {
-      width: 65%;
+      width: 60%;
       padding: 2rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr); /* Two columns */
@@ -548,22 +539,21 @@
     border-radius: 1.5rem;
     object-fit: cover;
   }
-  
+
 
   #spec .spec-inner .spec-heading{
     color: var(--primary-color);
     font-family: 'geist' ;
     font-weight: bolder;
+    font-size: 2.5rem;
+
   }
 
-  #spec .spec-inner .spec-heading{
-    font-family: 'geist';
-    font-weight: bolder;
-  }
 
   #spec .spec-inner .spec-col{
     font-family: 'helvetica' ;
     font-weight: normal;
+    font-size: 1.1rem;
   }
 
 .price-tag{
@@ -614,8 +604,18 @@
       padding: 1.5rem 1.5rem;
     }
   
+    #spec .spec-inner .spec-heading{
+      color: var(--primary-color);
+      font-family: 'geist' ;
+      font-weight: bolder;
+      font-size: 1.5rem;  
+    }
+  
     #spec .spec-inner .spec-col {
       max-width: 100%;
+      font-family: 'helvetica' ;
+      font-weight: normal;
+      font-size: 1rem;
     }
   
     #spec .row .col-6 {
@@ -692,11 +692,13 @@
   #feature .feature-inner .feature-heading {
     font-family: 'geist';
     font-weight: bolder;
+    font-size: 2.5rem;
   }
 
   #feature .feature-inner .feature-col {
     font-family: 'helvetica' ;
     font-weight: normal;
+    font-size: 1.1rem;
   }
   
   #feature .feature-inner .feature-col .content {
@@ -718,6 +720,7 @@
   
     #feature .feature-inner .feature-col {
       max-width: 100%;
+
     }
     #feature .feature-inner .feature-col:first-child {
       order: 1;
@@ -756,9 +759,17 @@
       width: 95%;
       padding: 1.5rem 1.5rem;
     }
-  
+
+  #feature .feature-inner .feature-heading {
+    font-family: 'geist';
+    font-weight: bolder;
+    font-size: 1.5rem;
+  }
     #feature .feature-inner .feature-col {
       max-width: 100%;
+      font-family: 'helvetica' ;
+      font-weight: normal;
+      font-size: 1rem;
     }
     #feature .feature-inner .feature-col:first-child {
       order: 1;
