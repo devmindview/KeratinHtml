@@ -153,3 +153,19 @@
       /* margin-bottom: 1rem; */
     }
   }
+
+  @media (max-width: 768px){
+    footer .list-unstyled li a {
+      color: #2e2e2e;
+      text-decoration: none;
+      font-size: 12px;
+    }
+  
+    footer .list-unstyled li a:hover {
+      color: #000000;
+      text-decoration: none;
+      font-size: 12px;
+      transform: scale(1) translateY(3px);
+      cursor: pointer;
+    }
+  }

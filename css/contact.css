@@ -199,7 +199,7 @@
 
 /* Quote Styling */
 .quote-text {
-    max-width: 50%;
+    width: 50%;
     background: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 20px;
@@ -234,7 +234,7 @@
     }
 
     .quote-text {
-        max-width: 90%;
+        width: 95%;
         font-size: 1rem;
     }
 
@@ -270,6 +270,7 @@
 
 .contact-section {
   height: 100vh;
+  min-height: fit-content;
   width: 100%;
   padding: 5rem 0;
   background-color: var(--light-bg);
@@ -320,6 +321,10 @@
 .contact-details p {
     font-size: 1rem;
     color: var(--dark-text);
+    font-family: 'helvetica' ;
+    src: url('../fonts/HelveticaNowDisplay-Regular.ttf');
+    font-weight: normal;
+
 }
 
 /* Form Box */
@@ -349,6 +354,14 @@
         padding: 20px;
         border-radius: 1rem;
     }
+    .contact-details h5{
+      font-size: 1rem;
+      color: var(--dark-text);
+    }
+    .contact-details p {
+      font-size: 0.9rem;
+      color: var(--dark-text);
+  }
 }
 
 .custom-input {

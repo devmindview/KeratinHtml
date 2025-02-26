@@ -465,7 +465,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(48, 48, 48, 0.427);
+  background: rgba(82, 82, 82, 0.089);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -476,7 +476,7 @@
 }
 
 .carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(44, 44, 44, 0.417);
 }
 
 .prev {
@@ -525,6 +525,15 @@
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 0%; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
 }
 
   .carousel-slide {
